@@ -1,2 +1,12 @@
 # tour-plan
- my practical task on the web start course
+
+my practical task on the web start course
+
+Tour Plan
+Учебный проект для практики на курсе Веб Старт от Glo Academy. Автор курса — Артем Исламов.
+
+Проект выполняет
+Тимофеев Николай. Семнадцатый поток курса Веб Старт. Тариф "Лонг" с куратором.
+
+Куратор
+Дмитрий Сухарев
