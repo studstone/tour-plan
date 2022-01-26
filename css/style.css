@@ -489,7 +489,7 @@ template {
     max-width: 700px;
   }
   .navbar-top {
-    padding: 30px auto;
+    padding: 30px 0;
   }
   .navbar__search {
     margin-left: auto;
