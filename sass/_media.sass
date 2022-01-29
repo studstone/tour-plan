@@ -38,16 +38,34 @@
       border: none
       background-color: #fff
       cursor: pointer
-
       &__line
         width: 16px
         height: 1px
         background-color: $text-color
+  .stars
+    flex-basis: auto
+  .hotel
+    &-info
+      &__text
+        width: 100%
+      &__rating
+        display: none
+    &-wrapper
+      justify-content: space-between
+      &__name
+        flex-basis: 100%
+        margin-top: 10px
+      &__offer
+        order: -1
+        margin-left: 0
 @media (max-width: 576px)
   .container
     max-width: 280px
   .logo
     width: 99px
+  .hotel
+    padding-top: 8px
+    padding-bottom: 20px
   
 
   
