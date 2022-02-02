@@ -12,3 +12,22 @@ var myswiper = new Swiper(".swiper", {
     pageUpDown: true,
   },
 });
+ymaps.ready(init);
+
+function init() {
+  var myMap = new ymaps.Map("map", {
+      center: [7.57, 79.79],
+      zoom: 8,
+      controls: ["zoomControl"],
+      behaviors: ["drag"],
+    }),
+    myGeoObject = new ymaps.GeoObject({
+      // Описание геометрии.
+      geometry: {
+        type: "Point",
+        coordinates: [7.57, 79.79],
+      },
+    });
+
+  myMap.geoObjects.add(myGeoObject);
+}
