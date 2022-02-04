@@ -133,47 +133,48 @@
         </div>
         <!-- /.hotel-info -->
         <div class="hotel-grid">
-          <div class="slider hotel__slider">
-            <!-- Slider main container -->
-            <div class="swiper">
-              <!-- Additional required wrapper -->
-              <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide">
-                  <img
-                    class="swiper-slide__image"
-                    src="image/slide-1.jpg"
-                    alt="slide"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    class="swiper-slide__image"
-                    src="image/slide-2.jpg"
-                    alt="slide"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img
-                    class="swiper-slide__image"
-                    src="image/slide-3.jpg"
-                    alt="slide"
-                  />
-                </div>
-                <div class="swiper-slide">
-                  <img src="image/slide-4.jpg" alt="slide" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="image/slide-5.jpg" alt="slide" />
-                </div>
+          <!-- Slider main container -->
+          <div class="swiper hotel-slider hotel__slider">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide hotel-slider__item">
+                <img
+                  class="swiper-slide__image"
+                  src="image/slide-1.jpg"
+                  alt="slide"
+                />
               </div>
-              <!-- /.swiper -->
-              <!-- If we need navigation buttons -->
-              <button class="slider-button slider-button--prev"></button>
-              <button class="slider-button slider-button--next"></button>
+              <div class="swiper-slide hotel-slider__item">
+                <img
+                  class="swiper-slide__image"
+                  src="image/slide-2.jpg"
+                  alt="slide"
+                />
+              </div>
+              <div class="swiper-slide hotel-slider__item">
+                <img
+                  class="swiper-slide__image"
+                  src="image/slide-3.jpg"
+                  alt="slide"
+                />
+              </div>
+              <div class="swiper-slide hotel-slider__item">
+                <img src="image/slide-4.jpg" alt="slide" />
+              </div>
+              <div class="swiper-slide hotel-slider__item">
+                <img src="image/slide-5.jpg" alt="slide" />
+              </div>
             </div>
+            <!-- /.swiper -->
+            <!-- If we need navigation buttons -->
+            <button
+              class="hotel-slider__button hotel-slider__button--prev"
+            ></button>
+            <button
+              class="hotel-slider__button hotel-slider__button--next"
+            ></button>
           </div>
-          <!-- /.slider -->
           <div class="hotel-right">
             <div class="booking">
               <div class="booking__info">
@@ -245,6 +246,46 @@
       <!-- /.newsletter-wrapper -->
     </section>
     <!-- /.newsletter -->
+    <section class="reviews">
+      <div class="container">
+        <h2 class="reviews__title">What people think about us</h2>
+        <div class="swiper reviews-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="reviews-slider__item">
+                <div class="reviews-slider__profile">
+                  <img
+                    src="image/reviews-avatar-1.jpg"
+                    alt="Photo: Megan Fox"
+                    class="reviews-slider__avatar"
+                  />
+                  <h3 class="reviews-slider__username">Megan Fox</h3>
+                  <span class="reviews-slider__date">Stayed 18 Nov, 2019</span>
+                  <div class="rating">
+                    <img class="rating__icon" src="image/star.svg" alt="star" />
+                    <img class="rating__icon" src="image/star.svg" alt="star" />
+                    <img class="rating__icon" src="image/star.svg" alt="star" />
+                    <img class="rating__icon" src="image/star.svg" alt="star" />
+                    <img class="rating__icon" src="image/star.svg" alt="star" />
+                    <img class="rating__icon" src="image/star.svg" alt="star" />
+                  </div>
+                  <!-- /.rating -->
+                </div>
+                <!-- /.reviews-slider__profile -->
+              </div>
+              <!-- /.reviews-slider__item -->
+            </div>
+            <!-- /.swiper-slide -->
+          </div>
+          <!-- /.swiper-wrapper -->
+          <button class="slider-button slider-button--prev"></button>
+          <button class="slider-button slider-button--next"></button>
+        </div>
+        <!-- /.swiper -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.reviews -->
     <script
       src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"
       type="text/javascript"
