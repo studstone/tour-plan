@@ -43,6 +43,16 @@
     width: 340px
   .map
     width: 340px
+  .reviews
+    &__title
+      margin-bottom: 50px
+    &-slider
+      &__item
+        max-width: 579px
+        &::after
+          display: none
+        &::before
+          display: none
 @media (max-width: 767px)
   .container
     max-width: 576px
@@ -97,6 +107,21 @@
       max-width: 576px
       flex-direction: column
       align-items: flex-start
+  .reviews
+    &__title
+      margin-bottom: 42px
+      font-size: 18px
+      line-height: 23px
+    &-slider
+      &__item
+        padding: 0 30px 30px
+      &__button
+        top: 45px
+        &--prev
+          left: 170px
+        &--next
+          right: 170px
+
 @media (max-width: 576px)
   .container
     max-width: 280px
@@ -124,6 +149,14 @@
         line-height: 38px
   .subscribe
     width: 100%
+  .reviews
+    &-slider
+      &__button
+        top: 45px
+        &--prev
+          left: 52px
+        &--next
+          right: 52px
 
   
   
