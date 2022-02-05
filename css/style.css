@@ -1180,6 +1180,12 @@ template {
   .hotel-slider {
     height: 350px;
   }
+  .hotel-slider__button--next {
+    right: 10px;
+  }
+  .hotel-slider__button--prev {
+    left: 10px;
+  }
   .hotel-right {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
