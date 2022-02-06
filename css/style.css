@@ -806,10 +806,6 @@ template {
 .newsletter {
   position: relative;
   padding: 98px 0 87px 0;
-  background-image: url(../image/newsletter-bg.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .newsletter::before {
@@ -862,6 +858,15 @@ template {
   font-size: 36px;
   line-height: 45px;
   text-transform: uppercase;
+}
+
+.parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
 }
 
 .subscribe {
@@ -1049,7 +1054,7 @@ template {
   .hotel-slider {
     width: 590px;
   }
-  .swiper-slide__image {
+  .hotel-slider__image {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
