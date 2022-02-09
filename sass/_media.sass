@@ -10,6 +10,16 @@
         width: 100%
         height: 100%
         object-fit: cover
+  .activities
+    &-variant
+      width: 230px
+      height: 230px
+      &__text
+        top: 130px
+        left: 15px
+      &__button
+        top: 180px
+        left: 15px
 @media (max-width: 992px)
   .container, 
   .newsletter-wrapper
@@ -53,6 +63,20 @@
           display: none
         &::before
           display: none
+  .activities
+    padding-bottom: 70px
+    &-info
+      flex-wrap: wrap
+      height: 530px
+    &-variant
+      width: 339px
+      height: 255px
+      &__text
+        top: 142px
+        left: 24px
+      &__button
+        top: 201px
+        left: 24px
 @media (max-width: 767px)
   .container
     max-width: 576px
@@ -126,7 +150,20 @@
           left: 170px
         &--next
           right: 170px
-
+  .activities
+    padding-top: 40px
+    padding-bottom: 60px
+    &-info
+      height: 530px
+    &-variant
+      width: 280px
+      height: 255px
+      &__text
+        top: 142px
+        left: 24px
+      &__button
+        top: 201px
+        left: 24px
 @media (max-width: 576px)
   .container
     max-width: 280px
@@ -162,7 +199,9 @@
           left: 52px
         &--next
           right: 52px
-
+  .activities
+    &-info
+      height: 1090px
   
   
   
