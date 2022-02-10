@@ -1382,6 +1382,25 @@ template {
     top: 180px;
     left: 15px;
   }
+  .packages-grid {
+    -ms-grid-columns: (310px)[3];
+        grid-template-columns: repeat(3, 310px);
+    -webkit-column-gap: 15px;
+            column-gap: 15px;
+  }
+  .packages-variant-1 {
+    -ms-grid-columns: 310px 310px;
+        grid-template-columns: 310px 310px;
+  }
+  .packages__hotel-name {
+    margin-bottom: 0;
+  }
+  .packages__info {
+    margin-bottom: 10px;
+  }
+  .packages__room {
+    margin-bottom: 24px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -1462,6 +1481,16 @@ template {
   .activities-variant__button {
     top: 201px;
     left: 24px;
+  }
+  .packages-grid {
+    -ms-grid-rows: (500px)[2];
+        grid-template-rows: repeat(2, 500px);
+    -ms-grid-columns: (340px)[2];
+        grid-template-columns: repeat(2, 340px);
+    row-gap: 15px;
+  }
+  .packages-variant-1 {
+    display: none;
   }
 }
 
@@ -1595,6 +1624,15 @@ template {
     top: 201px;
     left: 24px;
   }
+  .packages-grid {
+    -ms-grid-rows: (500px)[2];
+        grid-template-rows: repeat(2, 500px);
+    -ms-grid-columns: (285px)[2];
+        grid-template-columns: repeat(2, 285px);
+    row-gap: 6px;
+    -webkit-column-gap: 6px;
+            column-gap: 6px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1644,6 +1682,23 @@ template {
   }
   .activities-info {
     height: 1090px;
+  }
+  .packages-wrapper {
+    padding: 20 0 40px;
+  }
+  .packages__title {
+    font-size: 18px;
+    line-height: 23px;
+    margin-bottom: 35px;
+  }
+  .packages-grid {
+    -ms-grid-rows: (500px)[2];
+        grid-template-rows: repeat(2, 500px);
+    -ms-grid-columns: (280px)[1];
+        grid-template-columns: repeat(1, 280px);
+    row-gap: 6px;
+    -webkit-column-gap: 6px;
+            column-gap: 6px;
   }
 }
 /*# sourceMappingURL=style.css.map */
