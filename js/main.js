@@ -14,6 +14,13 @@ var hotelSlider = new Swiper(".hotel-slider", {
 });
 ymaps.ready(init);
 
+var menuButton = document.querySelector(".menu-button");
+menuButton.addEventListener("click", function () {
+  document
+    .querySelector(".navbar-bottom")
+    .classList.toggle("navbar-bottom--visible");
+});
+
 function init() {
   var myMap = new ymaps.Map("map", {
       center: [7.57, 79.79],
