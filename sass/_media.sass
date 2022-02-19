@@ -32,6 +32,9 @@
       margin-bottom: 10px
     &__room
       margin-bottom: 24px
+  .footer
+    &-wrapper
+      grid-template-columns: 235px 235px 295px 195px
 @media (max-width: 992px)
   .container, 
   .newsletter-wrapper
@@ -98,19 +101,24 @@
       display: none
   .footer
     &-wrapper
-      grid-template-columns: repeat(3, minmax(220px, 1fr))
-      padding: 77px 0 33px 0
+      grid-template-columns: 186px 14px 298px 202px
+      grid-template-rows: 159px 279px 305px 380px 22px 
+      padding: 73px 0 33px 0
     &__logo
+      margin-top: 0
       grid-row: 1 / 2
       width: 104px
       height: 120px
     &__social
       &-network
+        padding-bottom: 36px
         grid-row: 1 / 2
         grid-column: span 3
         align-self: center
     &__categories
       grid-row: 2 / 3
+    &__additional
+      grid-column: 3 / 4
     &__contact
       &-details
         grid-column: span 3
@@ -126,6 +134,10 @@
       justify-self: start 
     &__breadcrumb
       margin-left: 0
+    &__subtitle
+      margin-top: 0
+    &__payment
+     grid-column: 4 / 5 
   
   
 @media (max-width: 767px)
