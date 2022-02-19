@@ -3,9 +3,9 @@
   color: $light
   &-wrapper
     display: grid
-    grid-template-columns: repeat(4, minmax(min-content, 1fr))
+    grid-template-columns: 285px 285px 345px 195px
+    grid-template-rows: 195px 117px 419px 22px 
     padding: 108px 0 46px 0
-    grid-gap: 20px
     grid-auto-rows: minmax(98px, min-content)
   &__logo
     margin-top: 31px
@@ -48,6 +48,8 @@
     line-height: 23px
     margin: 0 0 16px 0
     text-transform: uppercase
+    &--mb-3
+      margin-bottom: 34px
     &--inline
       margin: 0
   &__subtitle
@@ -88,6 +90,7 @@
     font-size: 14px
     line-height: 160%
     color: $footer-text-color
+    margin-top: 0
     margin-bottom: 22px
   &__legal
     align-self: start

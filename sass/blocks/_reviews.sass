@@ -9,6 +9,7 @@
     text-transform: uppercase
     color: #333333
     margin-bottom: 70px
+    margin-top: 0
   &-slider
     position: relative
     &__item
@@ -77,6 +78,7 @@
       font-size: 12px
       line-height: 15px
       color: $primary
+      margin-top: 0
       margin-bottom: 10px
     &__date
       font-style: normal
@@ -88,9 +90,14 @@
       display: flex
       align-items: center
     &__text
+      margin: 0
       max-width: 537px
       font-style: normal
       font-weight: normal
       font-size: 12px
       line-height: 160%
       text-align: justify
+      color: #333333
+  &__icon
+    & + &
+      margin-left: 2px
