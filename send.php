@@ -20,6 +20,22 @@ $body = "
 <b>Email:</b><br>$email
 ";
 
+if(isset($_POST['email'])){
+    // если есть что-то в $_POST['email']
+    $body ="
+    <h2>Новое обращщение</h2>
+    <b>Email:</b><br>$email
+    ";} 
+else {
+    // если нет, отправлена форма с телефоном и пр.
+    $body = "
+    <h2>Новое обращщение</h2>
+    <b>Имя:</b> $name<br>
+    <b>Телефон:</b> $phone<br><br>
+    <b>Сообщение:</b><br>$message
+    ";
+}
+
 // Настройки PHPMailer
 $mail = new PHPMailer\PHPMailer\PHPMailer();
 try {
@@ -46,7 +62,7 @@ try {
     $mail->Body = $body;    
 
 // Проверяем отравленность сообщения
-if ($mail->send()) {$result = "success";} 
+if ( $mail->send()) {$result = "success";} 
 else {$result = "error";}
 
 } catch (Exception $e) {
