@@ -1,25 +1,4 @@
-var hotelSlider = new Swiper(".hotel-slider", {
-  // Optional parameters
-  loop: true,
-  // Navigation arrows
-  navigation: {
-    nextEl: ".hotel-slider__button--next",
-    prevEl: ".hotel-slider__button--prev",
-  },
-  keyboard: {
-    enabled: true,
-    onlyInViewport: true,
-    pageUpDown: true,
-  },
-});
 ymaps.ready(init);
-
-var menuButton = document.querySelector(".menu-button");
-menuButton.addEventListener("click", function () {
-  document
-    .querySelector(".navbar-bottom")
-    .classList.toggle("navbar-bottom--visible");
-});
 
 function init() {
   var myMap = new ymaps.Map("map", {
@@ -29,7 +8,6 @@ function init() {
       behaviors: ["drag"],
     }),
     myGeoObject = new ymaps.GeoObject({
-      // Описание геометрии.
       geometry: {
         type: "Point",
         coordinates: [7.57, 79.79],
@@ -39,22 +17,6 @@ function init() {
   myMap.geoObjects.add(myGeoObject);
 }
 
-var reviewsSlider = new Swiper(".reviews-slider", {
-  // Optional parameters
-  loop: true,
-  // Navigation arrows
-  navigation: {
-    nextEl: ".reviews-slider__button--next",
-    prevEl: ".reviews-slider__button--prev",
-  },
-  keyboard: {
-    enabled: true,
-    onlyInViewport: true,
-    pageUpDown: true,
-  },
-});
-
-// Отправка данных на сервер
 function send(event, php) {
   console.log("Отправка запроса");
   event.preventDefault ? event.preventDefault() : (event.returnValue = false);
@@ -62,24 +24,19 @@ function send(event, php) {
   req.open("POST", php, true);
   req.onload = function () {
     if (req.status >= 200 && req.status < 400) {
-      json = JSON.parse(this.response); // Ебанный internet explorer 11
+      json = JSON.parse(this.response);
       console.log(json);
 
-      // ЗДЕСЬ УКАЗЫВАЕМ ДЕЙСТВИЯ В СЛУЧАЕ УСПЕХА ИЛИ НЕУДАЧИ
       if (json.result == "success") {
-        // Если сообщение отправлено
         alert("Сообщение отправлено");
       } else {
-        // Если произошла ошибка
         alert("Ошибка. Сообщение не отправлено");
       }
-      // Если не удалось связаться с php файлом
     } else {
       alert("Ошибка сервера. Номер: " + req.status);
     }
   };
 
-  // Если не удалось отправить запрос. Стоит блок на хостинге
   req.onerror = function () {
     alert("Ошибка отправки запроса");
   };
@@ -87,62 +44,109 @@ function send(event, php) {
 }
 
 $(document).ready(function () {
-  // Populate images from data attributes.
-  var scrolled = $(window).scrollTop();
-  $(".parallax").each(function (index) {
-    var imageSrc = $(this).data("image-src");
-    var imageHeight = $(this).data("height");
-    $(this).css("background-image", "url(" + imageSrc + ")");
-    $(this).css("height", imageHeight);
-
-    // Adjust the background position.
-    var initY = $(this).offset(1).top;
-    var height = $(this).height();
-    var diff = scrolled - initY;
-    var ratio = Math.round((diff / height) * 100);
-    $(this).css(
-      "background-position",
-      "center " + parseInt(-(ratio * 1.5)) + "px"
-    );
+  var menuButton = document.querySelector(".menu-button");
+  menuButton.addEventListener("click", function () {
+    document
+      .querySelector(".navbar-bottom")
+      .classList.toggle("navbar-bottom--visible");
   });
 
-  // Attach scroll event to window. Calculate the scroll ratio of each element
-  // and change the image position with that ratio.
-  // https://codepen.io/lemagus/pen/RWxEYz
-  $(window).scroll(function () {
+  var hotelSlider = new Swiper(".hotel-slider", {
+    loop: true,
+    navigation: {
+      nextEl: ".hotel-slider__button--next",
+      prevEl: ".hotel-slider__button--prev",
+    },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+      pageUpDown: true,
+    },
+  });
+
+  var reviewsSlider = new Swiper(".reviews-slider", {
+    loop: true,
+    navigation: {
+      nextEl: ".reviews-slider__button--next",
+      prevEl: ".reviews-slider__button--prev",
+    },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+      pageUpDown: true,
+    },
+  });
+
+  $(document).ready(function () {
     var scrolled = $(window).scrollTop();
-    $(".parallax").each(function (index, element) {
+    $(".parallax").each(function (index) {
+      var imageSrc = $(this).data("image-src");
+      var imageHeight = $(this).data("height");
+      $(this).css("background-image", "url(" + imageSrc + ")");
+      $(this).css("height", imageHeight);
+
       var initY = $(this).offset().top;
       var height = $(this).height();
-      var endY = initY + $(this).height();
+      var diff = scrolled - initY;
+      var ratio = Math.round((diff / height) * 100);
+      $(this).css(
+        "background-position",
+        "cover " + parseInt(-(ratio * 1.5)) + "px"
+      );
+    });
 
-      // Check if the element is in the viewport.
-      var visible = isInViewport(this);
-      if (visible) {
-        var diff = scrolled - initY;
-        var ratio = Math.round((diff / height) * 100);
-        $(this).css(
-          "background-position",
-          "center " + parseInt(-(ratio * 1.5)) + "px"
-        );
-      }
+    $(window).scroll(function () {
+      var scrolled = $(window).scrollTop();
+      $(".parallax").each(function (index, element) {
+        var initY = $(this).offset().top;
+        var height = $(this).height();
+        var endY = initY + $(this).height();
+
+        var visible = isInViewport(this);
+        if (visible) {
+          var diff = scrolled - initY;
+          var ratio = Math.round((diff / height) * 100);
+          $(this).css(
+            "background-position",
+            "cover " + parseInt(-(ratio * 1.5)) + "px"
+          );
+        }
+      });
     });
   });
-});
 
-// Check if the element is in the viewport.
-// http://www.hnldesign.nl/work/code/check-if-element-is-visible/
-function isInViewport(node) {
-  // Am I visible? Height and Width are not explicitly necessary in visibility
-  // detection, the bottom, right, top and left are the essential checks. If an
-  // image is 0x0, it is technically not visible, so it should not be marked as
-  // such. That is why either width or height have to be > 0.
-  var rect = node.getBoundingClientRect();
-  return (
-    (rect.height > 0 || rect.width > 0) &&
-    rect.bottom >= 0 &&
-    rect.right >= 0 &&
-    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.left <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
+  function isInViewport(node) {
+    var rect = node.getBoundingClientRect();
+    return (
+      (rect.height > 0 || rect.width > 0) &&
+      rect.bottom >= 0 &&
+      rect.right >= 0 &&
+      rect.top <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  var modalButton = $("[data-toggle=modal]");
+  var closeModalButton = $(".modal__close");
+  modalButton.on("click", openModal);
+  closeModalButton.on("click", closeModal);
+
+  function openModal() {
+    var modalOverlay = $(".modal__overlay");
+    var modalDialog = $(".modal__dialog");
+    modalOverlay.addClass("modal__overlay--visible");
+    modalDialog.addClass("modal__dialog--visible");
+  }
+  function closeModal(event) {
+    event.preventDefault();
+    var modalOverlay = $(".modal__overlay");
+    var modalDialog = $(".modal__dialog");
+    modalOverlay.removeClass("modal__overlay--visible");
+    modalDialog.removeClass("modal__dialog--visible");
+  }
+  $(document).keydown(function (e) {
+    var code = e.keyCode || e.which;
+    if (code == 27) $("modal").hide();
+  });
+});
