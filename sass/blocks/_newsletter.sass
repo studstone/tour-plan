@@ -45,12 +45,11 @@
   position: relative
   width: 350px
   min-height: 55px
-  border-radius: 4px
-  overflow: hidden
-  &__input
-    position: absolute
+  label
     width: 100%
-    height: 100%
+  &__input
+    width: 100%
+    height: 55px
     border: none
     padding-left: 33px
     padding-right: 70px
@@ -58,12 +57,13 @@
     font-weight: 300
     font-size: 14px
     line-height: 18px
+    border-radius: 4px
   &__button
     position: absolute
     right: 0
     min-width: 65px
     top: 0
-    height: 100%
+    height: 55px
     border: none
     background-color: $primary
     color: $light
@@ -72,4 +72,5 @@
     font-size: 12px
     line-height: 15px
     cursor: pointer
+    border-radius: 0 4px 4px 0
 
