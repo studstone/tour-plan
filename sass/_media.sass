@@ -128,7 +128,8 @@
         grid-row: 4
         width: 539px
     &__input
-      flex-basis: 49%
+      &-group
+        flex-basis: 49%
     &__bottom 
       grid-column: 1 / 3 
       justify-self: start 
@@ -280,7 +281,7 @@
   .footer
     &-wrapper
       grid-template-columns: 1fr
-      grid-template-rows: 150px 97px 157px 201px 258px 391px 416px 25px 22px
+      grid-template-rows: 150px 97px 157px 201px 258px 296px 416px 25px 22px
       padding: 69px 0 33px 0
       row-gap: 0
     &__logo
@@ -318,7 +319,8 @@
       grid-column: 1
       justify-self: start
     &__input
-      flex-basis: 100%
+      &-group
+        flex-basis: 100%
   .modal
     &__dialog
       padding: 30px 70px
@@ -376,6 +378,8 @@
      row-gap: 6px
      column-gap: 6px
   .footer
+    &-wrapper
+      grid-template-rows: 150px 97px 157px 201px 258px 390px 416px 25px 22px
     &__contact
       &-details
         max-width: 280px

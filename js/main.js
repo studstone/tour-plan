@@ -149,4 +149,39 @@ $(document).ready(function () {
     var code = e.keyCode || e.which;
     if (code == 27) $("modal").hide();
   });
+  $(".modal__form").validate({
+    errorClass: "invalid",
+    messages: {
+      name: {
+        required: "Please specify your name",
+        minLength: "Name must be at least 2 letters",
+      },
+      email: {
+        required: "We need your email address to contact you",
+        email: "Your email address must be in the format of name@domain.com",
+      },
+      phone: "Please specify your phone number",
+    },
+  });
+  $(".footer__form").validate({
+    errorClass: "invalid",
+    messages: {
+      name: {
+        required: "Please specify your name",
+        minLength: "Name must be at least 2 letters",
+      },
+      phone: "Please specify your phone number",
+    },
+  });
+  $(".subscribe").validate({
+    errorClass: "invalid",
+    email: {
+      required: "We need your email address to contact you",
+      email: "Your email address must be in the format of name@domain.com",
+    },
+  });
 });
+
+let selector = document.querySelectorAll('input[type="tel"]');
+let im = new Inputmask("+7 (999) 999-99-99");
+im.mask(selector);
