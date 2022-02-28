@@ -1275,6 +1275,7 @@ template {
 
 .packages-subvariant-1 {
   position: relative;
+  height: 500px;
   border-radius: 8px 0px 0px 8px;
   overflow: hidden;
 }
@@ -1329,6 +1330,7 @@ template {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 500px;
   padding: 46px 21px 30px 43px;
   background-color: #0A223D;
   border-radius: 0px 8px 8px 0px;
@@ -1368,7 +1370,7 @@ template {
 }
 
 .packages__info {
-  height: 160px;
+  min-height: 160px;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -2097,7 +2099,7 @@ template {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .container {
     max-width: 576px;
   }
@@ -2380,6 +2382,9 @@ template {
 }
 
 @media (max-width: 576px) {
+  .navbar-top {
+    padding: 28px 0 28.58px;
+  }
   .container {
     max-width: 280px;
   }

@@ -1,22 +1,3 @@
-ymaps.ready(init);
-
-function init() {
-  var myMap = new ymaps.Map("map", {
-      center: [7.57, 79.79],
-      zoom: 8,
-      controls: ["zoomControl"],
-      behaviors: ["drag"],
-    }),
-    myGeoObject = new ymaps.GeoObject({
-      geometry: {
-        type: "Point",
-        coordinates: [7.57, 79.79],
-      },
-    });
-
-  myMap.geoObjects.add(myGeoObject);
-}
-
 function send(event, php) {
   console.log("Отправка запроса");
   event.preventDefault ? event.preventDefault() : (event.returnValue = false);
