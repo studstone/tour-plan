@@ -12,7 +12,7 @@
     padding: 40px 0 70px
   &-grid
     display: grid
-    grid-template-rows: repeat(2, minmax(500px, 1fr))
+    grid-template-rows: repeat(2, 1fr)
     grid-template-columns: repeat(3, 350px)
     row-gap: 30px
     column-gap: 30px
@@ -139,13 +139,15 @@
     border-radius: 4px
     border: none
   &-variant-2
+    position: relative
     display: grid
+    row-gap: 0
     border-radius: 8px
     overflow: hidden
   &-subvariant-3
-    position: relative
     height: 250px
   &-subvariant-4
+
     padding: 30px 21px 25px 32px
     height: 250px
     background-color: $dark
