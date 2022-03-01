@@ -10,13 +10,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/aos.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header class="navbar navbar--mobile-fixed">
       <div class="container">
         <div class="navbar-top">
-          <a href="index.html" class="logo">
+          <a href="#" class="logo">
             <img
               src="image/horizontal-logo.svg"
               alt="Logo: Best Tour plan"
@@ -44,7 +45,7 @@
 
           <a href="#" class="user navbar__user navbar__user--mobile-hidden">
             <img
-              src="./image/user-avatar.jpg"
+              src="./image/user-avatar.webp"
               alt="Avatar: Nathan"
               class="user__avatar"
             />
@@ -70,7 +71,7 @@
                   class="user navbar__user navbar__user--mobile-visible"
                 >
                   <img
-                    src="./image/user-avatar.jpg"
+                    src="./image/user-avatar.webp"
                     alt="Avatar: Nathan"
                     class="user__avatar"
                   />
@@ -80,7 +81,7 @@
               <li class="navbar-menu__item navbar-menu__item--mobile-visible">
                 <form
                   action="#"
-                  class="search navbar__search navbar__search--mobile-visible"
+                  class="search navbar__search navbar__search--mobile-visible form"
                 >
                   <input
                     type="text"
@@ -151,7 +152,7 @@
             <p class="hotel-description">
               Our manager will call you within 20 minutes
             </p>
-            <button class="button-home">
+            <button class="button button-home">
               <a class="button-home__link" href="index.html">main page</a>
             </button>
           </div>
@@ -162,11 +163,12 @@
       <!-- /.container -->
     </section>
     <!-- /.hotel -->
-
     <footer class="footer">
       <div class="container">
         <div class="footer-wrapper">
-          <img src="image/vertical-logo.svg" alt="" class="footer__logo" />
+          <a href="#" class="footer__logo">
+            <img src="image/vertical-logo.svg" alt="Logo: Best Tour Plan" />
+          </a>
           <div class="footer__list footer__categories">
             <h3 class="footer__title">ALL CATEGORIES</h3>
             <ul class="footer__ul">
@@ -227,13 +229,22 @@
           <div class="footer__social-network">
             <h3 class="footer__title footer__title--inline">Social Network</h3>
             <div class="footer__social-links">
-              <a href="#" class="footer__link">
+              <a
+                href="https://www.facebook.com/besttourplanner/"
+                class="footer__link"
+              >
                 <img src="image/facebook.svg" alt="Icon: Facebook" />
               </a>
-              <a href="#" class="footer__link">
+              <a
+                href="https://www.youtube.com/c/drewbinsky/featured"
+                class="footer__link"
+              >
                 <img src="image/youtube.svg" alt="Icon: Youtube" />
               </a>
-              <a href="#" class="footer__link">
+              <a
+                href="https://www.instagram.com/besttourplanner/"
+                class="footer__link"
+              >
                 <img src="image/instagram.svg" alt="Icon: Instagram" />
               </a>
             </div>
@@ -272,7 +283,6 @@
                     alt="Icon: map"
                   />
                 </div>
-
                 9748 Blossom Hill Rd undefined Lansing, Idaho 68545 United
                 States
               </li>
@@ -284,10 +294,25 @@
                     alt="Icon: phone"
                   />
                 </div>
-                Tel (business hours) : 269 1500 <br />
-                Tel (hotline) Monday - Saturday: 52-56-61-38 (08:00 am – 20:00
-                pm) <br />
-                Tel (hotline) Sunday: 52-56-61-38 (08:00 am – 14:00 pm)
+                <ul class="footer__ul">
+                  <li class="footer__item">
+                    <a href="tel:269-1500" class="footer__link"
+                      >Tel (business hours) : 269-1500</a
+                    >
+                  </li>
+                  <li class="footer__item">
+                    <a href="tel:52-56-61-38" class="footer__link"
+                      >Tel (hotline) Monday - Saturday: 52-56-61-38 (08:00 am –
+                      20:00 pm)</a
+                    >
+                  </li>
+                  <li class="footer__item">
+                    <a href="tel:52-56-61-38" class="footer__link"
+                      >Tel (hotline) Sunday: 52-56-61-38 (08:00 am – 14:00
+                      pm)</a
+                    >
+                  </li>
+                </ul>
               </li>
               <li class="footer__item footer__item--mb-2">
                 <div class="footer__icon-wrapper">
@@ -297,26 +322,39 @@
                     alt="Icon: email"
                   />
                 </div>
-                cherly.lawson@example.com
+                <a href="mailto:cherly.lawson@example.com" class="footer__link"
+                  >cherly.lawson@example.com</a
+                >
               </li>
             </ul>
           </div>
           <!-- /.footer__contact-details -->
           <div class="footer__contact-form">
             <h3 class="footer__title footer__title--mb-3">Send us a message</h3>
-            <form class="footer__form" action="send.php" method="POST">
-              <input
-                type="text"
-                class="input footer__input"
-                placeholder="Your Full Name*"
-                name="name"
-              />
-              <input
-                type="text"
-                class="input footer__input"
-                placeholder="Phone Number*"
-                name="phone"
-              />
+            <form
+              id="form"
+              class="footer__form form"
+              action="send.php"
+              method="POST"
+            >
+              <div class="footer__input-group">
+                <input
+                  type="text"
+                  class="input footer__input"
+                  placeholder="Your Full Name*"
+                  name="name"
+                  required
+                />
+              </div>
+              <div class="footer__input-group">
+                <input
+                  type="tel"
+                  class="input footer__input"
+                  placeholder="Phone Number*"
+                  name="phone"
+                  required
+                />
+              </div>
               <textarea
                 cols="30"
                 rows="10"
@@ -324,7 +362,7 @@
                 placeholder="Message"
                 name="message"
               ></textarea>
-              <button class="footer__button" type="submit">Send</button>
+              <button class="button footer__button" type="submit">Send</button>
               <span class="footer__info">* Required Fields</span>
             </form>
           </div>
@@ -345,7 +383,7 @@
           </div>
           <!-- /.footer__bottom -->
           <img
-            src="image/payment.png"
+            src="image/payment.jpg"
             alt="Payment Method"
             class="footer__payment"
           />
@@ -355,11 +393,10 @@
     </footer>
     <!-- /.footer -->
     <script src="js/jquery-3.6.0.min.js"></script>
-    <script
-      src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"
-      type="text/javascript"
-    ></script>
     <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/inputmask.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/aos.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

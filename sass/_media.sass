@@ -26,8 +26,6 @@
       column-gap: 15px
     &-variant-1
       grid-template-columns: 310px 310px 
-    &__hotel-name
-      margin-bottom: 0
     &__info 
       margin-bottom: 10px
     &__room
@@ -144,71 +142,19 @@
   .modal
     &__dialog
       padding: 30px 75px
-  
 @media (max-width: 768px)
+  .navbar
+    &-menu
+      &__link
+        font-style: normal
+        font-weight: bold
+        font-size: 12px
+        line-height: 15px
   .container
     max-width: 576px
-  body
-    padding-top: 84px
-  .navbar
-    &--mobile
-      &-fixed
-        position: fixed
-        left: 0
-        top: 0
-        right: 0
-        z-index: 99
-    &__user, &__search
-      &--mobile
-        &-hidden
-          display: none
-        &-visible
-          display: flex
-    &-bottom
-      display: none
-      position: fixed
-      left: 0
-      right: 0
-      bottom: 0
-      top: 78px
-      padding-top: 31px
-      &--visible
-        display: block
-        overflow-x: scroll
-    &-menu
-      flex-direction: column
-      &__item
-        margin-bottom: 20px
-        &--mobile
-          &-visible
-            display: block
-  .user
-    flex-direction: column
-    justify-content: space-between
-    align-items: center
-    height: 68px
-    &__name
-      color: $light
-      margin: 0
   .search
     &__input
       width: 243px
-  .menu
-    &-button
-      display: flex
-      width: 16px
-      height: 11px
-      padding: 0
-      align-items: center
-      justify-content: space-between
-      flex-direction: column
-      border: none
-      background-color: #fff
-      cursor: pointer
-      &__line
-        width: 16px
-        height: 1px
-        background-color: $text-color
   .stars
     flex-basis: auto
   .hotel
@@ -330,9 +276,67 @@
       margin-bottom: 15px
       width: 100%
 @media (max-width: 576px) 
+  body
+    padding-top: 80px
+  .navbar
+    &--mobile
+      &-fixed
+        position: fixed
+        left: 0
+        top: 0
+        right: 0
+        z-index: 99
+    &__user, &__search
+      &--mobile
+        &-hidden
+          display: none
+        &-visible
+          display: flex
+    &-bottom
+      display: none
+      position: fixed
+      left: 0
+      right: 0
+      bottom: 0
+      top: 78px
+      padding-top: 31px
+      &--visible
+        display: block
+        overflow-x: scroll
+    &-menu
+      flex-direction: column
+      &__item
+        margin-bottom: 20px
+        &--mobile
+          &-visible
+            display: block
   .navbar
     &-top
       padding: 28px 0 28.58px
+  .menu
+    &-button
+      display: flex
+      width: 16px
+      height: 11px
+      padding: 0
+      align-items: center
+      justify-content: space-between
+      flex-direction: column
+      border: none
+      background-color: #fff
+      cursor: pointer
+      &__line
+        width: 16px
+        height: 1px
+        background-color: $text-color
+  .user
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    height: 68px
+    &__name
+      color: $light
+      margin: 0
   .container
     max-width: 280px
   .logo
