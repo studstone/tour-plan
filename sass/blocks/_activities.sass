@@ -22,7 +22,7 @@
     position: relative
     color: $light
     width: 255px
-    height: 255px
+    min-height: 255px
     border-radius: 6px
     overflow: hidden
     &::before
@@ -40,18 +40,13 @@
       position: absolute
       object-fit: cover
     &__text
-      position: absolute
-      top: 143px
-      left: 26px
+      margin-bottom: 18px
       font-style: normal
       font-weight: bold
       font-size: 16px
       line-height: 20px
       z-index: 2
     &__button
-      position: absolute
-      top: 201px
-      left: 26px
       z-index: 2
       width: 100px
       height: 30px
@@ -63,6 +58,35 @@
       font-weight: 600
       font-size: 12px
       line-height: 16px
+    &__bottom
+      display: flex
+      flex-direction: column
+      padding: 143px 84px 24px 26px
+      max-width: 100%
+      min-height: 100%
+      z-index: 2
+    &__bottom-2
+      display: flex
+      flex-direction: column
+      padding: 143px 75px 24px 27px
+      max-width: 100%
+      min-height: 100%
+      z-index: 2  
+    &__bottom-3
+      display: flex
+      flex-direction: column
+      padding: 143px 68px 24px 26px
+      max-width: 100%
+      min-height: 100%
+      z-index: 2  
+    &__bottom-4
+      display: flex
+      flex-direction: column
+      padding: 143px 29px 24px 26px
+      max-width: 100%
+      min-height: 100%
+      z-index: 2  
+
 
 
     
