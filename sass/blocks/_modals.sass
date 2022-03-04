@@ -22,7 +22,7 @@
     background-color: $dark
     color: $light
     max-width: 478px
-    min-height: 487px
+    max-height: 518px
     border-radius: 8px
     z-index: 101
     visibility: hidden
@@ -31,6 +31,7 @@
     &--visible
       visibility: visible
       opacity: 1
+      overflow-x: auto
   &__title
     font-style: normal
     font-weight: bold
@@ -91,5 +92,15 @@
     font-weight: bold
     font-size: 12px
     line-height: 15px
+#element-1::-webkit-scrollbar
+  width: 4px
 
+#element-1::-webkit-scrollbar-track 
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset
+  background-color: #f9f9fd
+  border-radius: 10px
+
+#element-1::-webkit-scrollbar-thumb 
+  border-radius: 10px
+  background: linear-gradient(180deg, #00c6fb, #005bea)
     

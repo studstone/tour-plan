@@ -116,15 +116,19 @@ $(document).ready(function () {
   function openModal() {
     var modalOverlay = $(".modal__overlay");
     var modalDialog = $(".modal__dialog");
+    var bodyHidden = $(".body");
     modalOverlay.addClass("modal__overlay--visible");
     modalDialog.addClass("modal__dialog--visible");
+    bodyHidden.addClass("body--hidden");
   }
   function closeModal(event) {
     event.preventDefault();
     var modalOverlay = $(".modal__overlay");
     var modalDialog = $(".modal__dialog");
+    var bodyHidden = $(".body");
     modalOverlay.removeClass("modal__overlay--visible");
     modalDialog.removeClass("modal__dialog--visible");
+    bodyHidden.removeClass("body--hidden");
   }
   $(document).keydown(function (e) {
     var code = e.keyCode || e.which;
